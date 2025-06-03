@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Our Products - Fab Enterprise Networks</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Navbar -->
+  <header class="navbar">
+    <div class="logo-container">
+      <img src="FAB ENTERPRISE LOGO.jpg" alt="Fabian Networks Logo" class="logo" />
+      <h1>Fab Enterprise Networks</h1>
+    </div>
+    <nav>
+      <a href="index.html#home">Home</a>
+      <a href="products.html">Products</a>
+      <a href="mpesa.html">Pay</a>
+      <a href="cart.html">Cart (<span id="cart-count">0</span>)</a>
+      <a href="index.html#apply">Jobs</a>
+    </nav>
+  </header>
+
+  <!-- Products Section -->
+  <section id="products" class="section">
+    <h2>Explore Our Products and Services</h2>
+    <span>Once you have selected your products, scroll down at the bottom of product page to make payment and forward your order <br> to our staff-delivery team who will respond with immediate effect</span>
+
+    <div class="filter-bar" style="margin: 20px auto; max-width: 600px;">
+      <label for="categoryFilter"><strong>Filter by Category:</strong></label>
+      <select id="categoryFilter" onchange="filterByCategory()" style="margin-left: 10px; padding: 5px;">
+        <option value="Electronics">All</option>
+        <option value="Lights & Solar">Lights & Solar</option>
+        <option value="Extensions & Batteries">Extensions & Batteries</option>
+        <option value="Watches">Watches</option>
+        <option value="Stationeries">Stationeries</option>
+        <option value="Clothes Male">Clothes Male</option>
+        <option value="Clothes Female">Clothes Female</option>
+         <option value="IT & Cyber Services">IT & Cyber Services</option>
+         <option value="Printers & Computer Accessories">Printers & Computer Accessories</option>
+        <option value="Audio & Accessories">Audio & Accessories</option>
+        <option value="Bags">Bags</option>
+        <!-- Add more categories as needed -->
+      </select>
+    </div>
+
+    <div id="product-list" class="product-grid"></div>
+  </section>
+
+ <!-- Cart Section with Email Checkout -->
+<section id="cart-tab" class="section" style="margin: 40px auto; max-width: 600px; padding: 20px; background: #fff3e0; border-radius: 12px;">
+  <h3 style="color: #d84315;">
+    <img src="cart.png" alt="Cart Icon" style="width: 32px; height: 32px; vertical-align: middle; margin-right: 8px;">
+    Your Cart, Thank you for choosing us!
+  </h3>
+
+  <ul id="cart" class="cart-list" style="list-style-type: none; padding-left: 0;"></ul>
+
+  <div id="cart-total" style="font-weight: bold; margin-top: 10px;">Total: Ksh 0</div>
+
+  <button onclick="checkoutWhatsApp()" class="checkout-btn" style="margin-top: 10px; background-color: #43a047; color: white; padding: 12px 20px; border: none; border-radius: 6px; cursor: pointer;">
+    Place via WhatsApp
+  </button>
+
+  <!-- Checkout via Email using Formspree -->
+  <form id="emailCheckoutForm" action="https://formspree.io/f/xdkzoezb" method="POST" style="margin-top: 20px;">
+    <!-- Hidden input to carry the cart order -->
+    <input type="hidden" name="order" id="orderDetails">
+
+    <label for="customerEmail">Your Email:</label>
+    <input type="email" name="email" id="customerEmail" required style="width: 100%; padding: 10px; margin-top: 8px; margin-bottom: 12px; border: 1px solid #ccc; border-radius: 6px;">
+
+    <button type="submit" onclick="prepareEmailOrder()" style="background-color: #1976d2; color: white; padding: 12px 20px; border: none; border-radius: 6px; cursor: pointer;">
+      Place Order 
+    </button>
+  </form>
+</section>
+
+<script>
+  function checkoutWhatsApp() {
+    const cartItems = document.querySelectorAll("#cart li");
+    let message = "Hello, I would like to order:\n";
+    cartItems.forEach(item => {
+      message += "- " + item.textContent + "\n";
+    });
+    const total = document.getElementById("cart-total").textContent;
+    message += "\n" + total;
+    const whatsappUrl = "https://wa.me/254759064950?text=" + encodeURIComponent(message);
+    window.open(whatsappUrl, '_blank');
+  }
+
+  function prepareEmailOrder() {
+    const cartItems = document.querySelectorAll("#cart li");
+    let body = "Customer Order:\n\n";
+    cartItems.forEach(item => {
+      body += "- " + item.textContent + "\n";
+    });
+    const total = document.getElementById("cart-total").textContent;
+    body += "\n" + total;
+
+    document.getElementById("orderDetails").value = body;
+  }
+</script>
+
+
+<!-- M-PESA Section -->
+<section class="mpesa-instructions section" style="
+  max-width: 500px;
+  margin: 50px auto 120px auto;
+  position: relative;
+  z-index: 1;
+  padding: 25px 30px 30px 30px;
+  border: 3px solid #009900; /* strong green border */
+  border-radius: 16px;
+  background-color: #e6f4e6; /* light green background */
+  box-shadow: 0 6px 15px rgba(210, 224, 210, 0.3);
+  font-family: Arial, sans-serif;
+  color: #004d00;
+  box-sizing: border-box;
+">
+
+  <!-- Safaricom logo top right -->
+  <img 
+    src="Mpesa-Logo.png" 
+    alt="Safaricom Logo" 
+    style="
+      position: absolute;
+      top: 15px;
+      right: 20px;
+      width: 80px;
+      height: auto;
+      filter: drop-shadow(1px 1px 1px rgba(0,0,0,0.15));
+    "
+  >
+  
+
+  <h2 style="color: #007a00; font-size: 24px; margin-bottom: 15px;">Pay with M-PESA</h2>
+  
+  <p style="font-size: 15.5px; line-height: 1.5;">
+    To complete your order, please make payment via M-PESA:
+  </p>
+  
+  <ul style="font-size: 15.5px; line-height: 1.6; margin-left: 20px;">
+    <li><strong>Go to M-PESA</strong> on your phone</li>
+    <li>Select <strong>Lipa na M-PESA</strong></li>
+    <li>Select <strong>Send Money</strong></li>
+    <li>Enter phone number: <strong>+254 759 064950</strong></li>
+    <li>Enter the amount</li>
+    <li>Enter your name or order ID in the reason/message field</li>
+  </ul>
+  
+  <p style="font-size: 15.5px; line-height: 1.5;">
+    After payment, please send the confirmation message to our WhatsApp or email:
+  </p>
+  
+  <p style="font-size: 15.5px; line-height: 1.5;">
+    <strong>WhatsApp:</strong>
+    <a href="https://wa.me/254759064950" target="_blank" style="color: #007a00; text-decoration: none;">Click here</a><br>
+    <strong>Email:</strong> fablitedsoboyere@gmail.com
+  </p>
+</section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-hero-bg"></div>
+    <div class="footer-content">
+      <div class="footer-message-box">
+        &copy; 2025 Fab Enterprise Networks. All rights reserved.<br>
+        Developed by Oboyere Fab <br>
+        Inquire via WhatsApp
+        <a href="https://wa.me/254759064950" target="_blank" class="whatsapp-link">
+          <img src="wat.png" alt="WhatsApp" class="whatsapp-icon">
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

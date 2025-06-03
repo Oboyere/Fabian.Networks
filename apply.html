@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Apply for a Job - Fab Enterprise Networks</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Navbar -->
+  <header class="navbar">
+    <div class="logo-container">
+      <img src="FAB ENTERPRISE LOGO.jpg" alt="Fabian Networks Logo" class="logo" />
+      <h1>Fab Enterprise Networks</h1>
+    </div>
+    <nav>
+      <a href="index.html#home">Home</a>
+      <a href="products.html">Products</a>
+      <a href="cart.html">Cart (<span id="cart-count">0</span>)</a>
+      <a href="apply.html">Jobs</a>
+         </nav>
+  </header>
+
+<section id="apply" class="section" style="padding: 50px 15px; background: #f0f4f8; font-family: 'Poppins', sans-serif;">
+
+  <h2 style="text-align: center; color: #1b5e20; font-weight: 800; letter-spacing: 1.5px; margin-bottom: 50px;">
+    Choose Your Job & Apply
+  </h2>
+
+  <h2>Available Job Positions</h2>
+
+  <!-- Job Positions Cards -->
+  <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 25px; margin-bottom: 60px;">
+    <div class="job-card" data-position="Sales Assistant" tabindex="0" style="cursor: pointer; max-width: 220px; background: #ffcdd2; border-radius: 12px; box-shadow: 0 6px 12px rgba(0,0,0,0.1); padding: 30px 20px; color: #b71c1c; font-weight: 700; text-align: center; transition: transform 0.3s, box-shadow 0.3s;">
+      Sales Assistant
+    </div>
+    <div class="job-card" data-position="Storekeeper" tabindex="0" style="cursor: pointer; max-width: 220px; background: #ef9a9a; border-radius: 12px; box-shadow: 0 6px 12px rgba(0,0,0,0.1); padding: 30px 20px; color: #b71c1c; font-weight: 700; text-align: center;">
+      Storekeeper
+    </div>
+    <div class="job-card" data-position="Delivery Personnel" tabindex="0" style="cursor: pointer; max-width: 220px; background: #e57373; border-radius: 12px; box-shadow: 0 6px 12px rgba(0,0,0,0.1); padding: 30px 20px; color: #b71c1c; font-weight: 700; text-align: center;">
+      Delivery Personnel
+    </div>
+    <div class="job-card" data-position="Sales Manager" tabindex="0" style="cursor: pointer; max-width: 220px; background: #f28b82; border-radius: 12px; box-shadow: 0 6px 12px rgba(0,0,0,0.1); padding: 30px 20px; color: #b71c1c; font-weight: 700; text-align: center;">
+      Sales Manager
+    </div>
+    <div class="job-card" data-position="Cleaner" tabindex="0" style="cursor: pointer; max-width: 220px; background: #ef5350; border-radius: 12px; box-shadow: 0 6px 12px rgba(0,0,0,0.1); padding: 30px 20px; color: #b71c1c; font-weight: 700; text-align: center;">
+      Cleaner
+    </div>
+  </div>
+
+  <!-- Application Form -->
+  <div style="max-width: 500px; margin: 0 auto; background: #ffffff; border-radius: 15px; box-shadow: 0 8px 24px rgba(0,0,0,0.1); padding: 40px 35px;">
+    <h3 style="text-align: center; color: #b71c1c; margin-bottom: 30px;">Application Form</h3>
+
+    <form id="jobForm" method="POST" action="https://formspree.io/f/xdkzoezb" style="display: flex; flex-direction: column; gap: 18px; font-size: 15px; color: #b71c1c;">
+      <label for="name">Full Name:</label>
+      <input type="text" id="name" name="Full Name" required style="padding: 12px; border: 1.8px solid #ef9a9a; border-radius: 8px;">
+
+      <label for="email">Your Email Address:</label>
+      <input type="email" id="email" name="Email" required style="padding: 12px; border: 1.8px solid #ef9a9a; border-radius: 8px;">
+
+      <label for="county">County:</label>
+      <select id="county" name="County" required style="padding: 12px; border: 1.8px solid #ef9a9a; border-radius: 8px;">
+        <option value="" disabled selected>Select your county</option>
+        <option>Baringo</option>
+        <option>Bomet</option>
+        <option>Bungoma</option>
+        <option>Busia</option>
+        <option>Elgeyo Marakwet</option>
+        <option>Embu</option>
+        <option>Garissa</option>
+        <option>Homa Bay</option>
+        <option>Isiolo</option>
+        <option>Kajiado</option>
+        <option>Kakamega</option>
+        <option>Kericho</option>
+        <option>Kiambu</option>
+        <option>Kilifi</option>
+        <option>Kirinyaga</option>
+        <option>Kisii</option>
+        <option>Kisumu</option>
+        <option>Kitui</option>
+        <option>Kwale</option>
+        <option>Laikipia</option>
+        <option>Lamu</option>
+        <option>Machakos</option>
+        <option>Makueni</option>
+        <option>Mandera</option>
+        <option>Meru</option>
+        <option>Migori</option>
+        <option>Mombasa</option>
+        <option>Murang'a</option>
+        <option>Nairobi</option>
+        <option>Nakuru</option>
+        <option>Nandi</option>
+        <option>Narok</option>
+        <option>Nyamira</option>
+        <option>Nyandarua</option>
+        <option>Nyeri</option>
+        <option>Samburu</option>
+        <option>Siaya</option>
+        <option>Taita Taveta</option>
+        <option>Tana River</option>
+        <option>Tharaka-Nithi</option>
+        <option>Trans Nzoia</option>
+        <option>Turkana</option>
+        <option>Uasin Gishu</option>
+        <option>Vihiga</option>
+        <option>Wajir</option>
+        <option>West Pokot</option>
+      </select>
+
+      <label for="gender">Gender:</label>
+      <select id="gender" name="Gender" required style="padding: 12px; border: 1.8px solid #ef9a9a; border-radius: 8px;">
+        <option value="" disabled selected>Select Gender</option>
+        <option value="Male">Male</option>
+        <option value="Female">Female</option>
+      </select>
+
+      <label for="dob">Date of Birth:</label>
+      <input type="date" id="dob" name="Date of Birth" required style="padding: 12px; border: 1.8px solid #ef9a9a; border-radius: 8px;">
+
+      <label for="education">Highest Education Level:</label>
+      <input type="text" id="education" name="Education" required style="padding: 12px; border: 1.8px solid #ef9a9a; border-radius: 8px;">
+
+      <label for="phone">Phone Number:</label>
+      <input type="text" id="phone" name="Phone" required style="padding: 12px; border: 1.8px solid #ef9a9a; border-radius: 8px;">
+
+      <label for="position">Position Applying For:</label>
+      <input type="text" id="position" name="Position" readonly required style="padding: 12px; border: 1.8px solid #ef9a9a; border-radius: 8px; background: #ffebee; color: #b71c1c; font-weight: 700;">
+
+      <div style="text-align: center;">
+        <button type="submit" style="background-color: #b71c1c; color: white; font-weight: 700; padding: 14px 30px; border-radius: 10px; border: none; cursor: pointer; font-size: 16px; margin-top: 20px;">Submit Application</button>
+      </div>
+
+      <p id="successMessage" style="display: none; text-align: center; color: green; font-weight: bold; margin-top: 20px;">Thank you for applying! ✅</p>
+    </form>
+  </div>
+
+
+<script>
+  // Auto-fill position from job card
+  document.querySelectorAll('.job-card').forEach(card => {
+    card.addEventListener('click', () => {
+      const selected = card.getAttribute('data-position');
+      document.getElementById('position').value = selected;
+      document.getElementById('name').focus();
+    });
+  });
+
+  // Optional: Display success message after real submission (if desired)
+  document.getElementById('jobForm').addEventListener('submit', function () {
+    setTimeout(() => {
+      document.getElementById('successMessage').style.display = 'block';
+    }, 1000);
+  });
+</script>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-hero-bg"></div>
+    <div class="footer-content">
+      <div class="footer-message-box">
+        &copy; 2025 Fab Enterprise Networks. All rights reserved.<br>
+        Developed by Oboyere Fab <br>
+        Inquire via WhatsApp
+        <a href="https://wa.me/254759064950" target="_blank" class="whatsapp-link">
+          <img src="wat.png" alt="WhatsApp" class="whatsapp-icon">
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
